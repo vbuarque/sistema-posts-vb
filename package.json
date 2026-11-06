@@ -1,12 +1,26 @@
 {
   "name": "sistema-posts-vb",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "typecheck": "tsc -p ."
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm run dev -w @vb/server\" \"npm run dev -w @vb/web\"",
+    "build": "npm run build -w @vb/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:generate": "npm run db:generate -w @vb/server",
+    "db:migrate": "npm run db:migrate -w @vb/server"
   },
   "devDependencies": {
+    "concurrently": "^9.2.5",
     "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.18.20": true
   }
 }

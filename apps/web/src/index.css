@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Cores do PAINEL (não são das marcas: as marcas usam os próprios tokens). */
+@theme {
+  --color-painel-bg: #0e0f11;
+  --color-painel-card: #17181b;
+  --color-painel-borda: #2a2c31;
+  --color-painel-texto: #ececec;
+  --color-painel-suave: #9b9ea6;
+  --color-ok: #4ade80;
+  --color-alerta: #fbbf24;
+  --color-erro: #f87171;
+}
+
+body {
+  @apply bg-painel-bg text-painel-texto antialiased;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+}
