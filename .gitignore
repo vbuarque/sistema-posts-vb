@@ -1,0 +1,24 @@
+# Dependências (são reinstaladas com npm install)
+node_modules/
+
+# SEGREDOS: chave da Claude API, tokens do Instagram etc.
+# Nunca vão para o GitHub.
+.env
+.env.*
+!.env.example
+
+# Arquivos gerados
+dist/
+build/
+output/
+*.log
+
+# Banco de dados local
+*.db
+*.sqlite
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
